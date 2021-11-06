@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a
+    {
+      text-decoration: none;
+      color: hotpink;
+    }
+    .afterlink:after
+    {
+      
+      content:'https://www.appleseeds.org.il/' ;
+    }
+    span::before
+    {
+      content: '*';
+      color: chartreuse;
+      font-size: 2rem;
+    }
+    span::after
+    {
+      content: '*';
+      color: rgb(44, 190, 154);
+      font-size: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div>please <span>visit</span> this<a href="" class="afterlink"> website </a> for more information</div>
+</body>
+</html>

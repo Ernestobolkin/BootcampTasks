@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .main a
+    {
+      text-decoration: none;
+      color: wheat;
+      font-size: 0.9rem;
+      padding: 0 1vh;
+    }
+    .main li
+    {
+      display: inline-block;
+    }
+    .main
+    {
+      height: 3vh;
+      background-color: gray;
+      display: flex;
+      justify-content: flex-end;
+      /* align-items:center; */
+      position: relative;
+
+    }
+    .apple
+    {
+      position: absolute;
+      left: 1vw;
+    }
+    @media(max-width: 500px)
+    {
+      .main a
+    {
+      text-decoration: none;
+      color: wheat;
+      font-size: 0.9rem;
+      padding: 0 1vh;
+    }
+    .main li
+    {
+      position: absolute;
+      top:6vh;
+      display: inline-block;
+      display: flex;
+      flex-direction:column;
+      align-items:center;
+ 
+    }
+    .main
+    {
+      height: 18vh;
+      justify-content:center;
+      background-color: gray;
+      display: flex;
+      /* justify-content: flex-end; */
+      /* align-items:center; */
+      position: relative;
+      
+    }
+    .apple
+    {
+      position: absolute;
+      top: -10vw;
+      
+    }
+    }
+  </style>
+</head>
+<body>
+<!-- <div class="all"> -->
+    <ul class="main">
+      <li>
+        <a href="#">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">PROTFOLIO</a>
+        <a href="#">CONTACT</a>
+        <a class="apple" href="#"><span>APPLESEEDS</span></a>
+      </li>
+    </ul>
+<!-- </div> -->
+
+</body>
+</html>

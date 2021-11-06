@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .container
+      {
+        display: flex;
+        justify-content:space-around ;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
+        background: rgb(0, 0, 0);
+      
+      }
+      .circle1 {
+        width: 50px;
+        height: 50px;
+        margin: 0 50px;
+        border:3px solid rgb(126, 126, 126);
+        border-bottom-color: rgb(0, 253, 240);
+        border-radius: 50%;
+        animation: spin 1s infinite linear;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      } 
+      .circle2
+      {
+        width: 50px;
+        height: 50px;
+        margin: 0 50px;
+        animation: spin 1s infinite linear;
+        border-radius: 50%;
+        border-top: 4px solid rgb(132, 0, 255);
+        border-right: 4px solid transparent;
+      }
+      
+      .dots1{
+        width: 20px;
+        height: 20px;
+        background: gray;
+        border-radius: 50%;
+        position: relative;
+        animation: dotsanime1 1s infinite linear;
+      }
+
+      .dots1::before{
+        content: ' ';
+        width: 20px;
+        height: 20px;
+        background: gray;
+        border-radius: 50%;
+        left: 30px;
+        position: absolute;
+        animation: dotsanime2 1s infinite linear;
+      }
+      .dots1::after{
+        content: ' ';
+        width: 20px;
+        height: 20px;
+        background: gray;
+        border-radius: 50%;
+        right: 30px;
+        position: absolute;
+        animation: dotsanime3 1s infinite linear;
+      }
+      @keyframes dotsanime1 {
+        33% {
+            background: black;
+        }
+        100% {
+            background: gray;
+        }
+
+      }
+      @keyframes dotsanime2 {
+        33% {
+            background: grey;
+        }
+        66% {
+            background: black;
+        }
+        100% {
+            background: grey;
+        }
+
+      }
+      @keyframes dotsanime3 {
+        66% {
+            background: grey;
+        }
+        100% {
+            background: black;
+        }
+
+      }
+
+       /* jumping dots */
+       /* .dots2{
+        width: 20px;
+        height: 20px;
+        background: gray;
+        border-radius: 50%;
+        position: relative;
+        animation: dotsjump1 1s forwards ease-in-out infinite;
+      }
+
+      .dots2::before{
+        content: ' ';
+        width: 20px;
+        height: 20px;
+        background: gray;
+        border-radius: 50%;
+        left: 30px;
+        position: absolute;
+        animation: tod2 3s forwards  infinite;
+      }
+      .dots2::after{
+        content: ' ';
+        width: 20px;
+        height: 20px;
+        background: gray;
+        border-radius: 50%;
+        right: 30px;
+        position: absolute;
+        animation: munber3 6s forwards infinite ;
+      }
+      @keyframes dotsjump1{
+        25%{
+          bottom:10px;
+        }
+        50%{
+          bottom: 15px;
+        }
+        75%{
+          bottom:10px;
+        }
+        100%{
+          bottom:0;
+        }
+      } */
+      
+
+    </style>
+  </head>
+  <body>
+  <div class="container">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="dots1 lights"></div>
+    <div class="dots2 jump">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    div{
+      background: chocolate;
+      padding:10px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    div::before{
+      content: '';
+      height: 100%;
+      width:100%;
+      border-top:3px solid black;
+      top: 0;
+      left:0;
+      position: absolute;
+      transform: translateX(101%);
+      transition: all ease-in-out 1s;
+    }
+    div::after{
+      content: '';
+      height: 100%;
+      width:100%;
+      border-bottom:3px solid black;
+      bottom: 0;
+      left:0;
+      position: absolute;
+      transform: translateX(-101%);
+      transition: all ease-in-out 1s;
+    }
+    div:hover::before,
+    div:hover::after{
+      content: '';
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+ <div class="home ">Home</div>
+</body>
+</html>

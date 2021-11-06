@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 19.1</title>
+  <style>
+    :root
+    {
+      --transition: 5s;
+      --button-blue:lightskyblue;
+      --button-red:red;
+      --button-yellow:lightyellow;
+      --button-green:lightgreen;
+      --button-grey:lightgrey;
+      --button-orange:rgb(255, 186, 57);
+
+    }
+    body{
+      background-color: rgb(58, 79, 107);
+    }
+      .container
+      {
+        display: flex;
+        justify-content: center;
+      }
+      h2{
+        text-align: center;
+      }
+    .button{
+      
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 20px;
+  cursor: pointer;
+  transition-duration: var(--transition);
+    }
+  .button1 {
+  background-color: lightgreen; 
+  color: black; 
+  border: 2px solid #00a505;
+  }
+
+  .button1:hover {
+  background-color: var(--button-green);
+  color: white;
+  }
+
+  .button2
+  {
+    background-color: rgb(255, 89, 89);
+    color: black;
+    border: 2px solid rgb(168, 0, 0);
+  }
+  .button2:hover {
+    background-color: var(--button-red);
+    color: black;
+  }
+  .button3{
+    background-color: rgb(45, 45, 204);
+    color: black;
+    border: 2px solid blue;
+  }
+  .button3:hover{
+    background-color: var(--button-blue);
+    color: rgb(0, 0, 0);
+  }
+  .button1_1{
+    background-color: orange;
+    color: black;
+    border: 2px solid rgb(163, 106, 0);
+    border-radius: 15px;
+  }
+  .button1_1:hover{
+    background-color: var(--button-red);
+    color: black;
+  }
+
+  .button1_2{
+    background-color: rgb(112, 112, 0);
+    color: black;
+    border: 2px solid rgb(149, 149, 0);
+    border-radius: 12px;
+  }
+  .button1_2:hover{
+    background-color: var(--button-yellow);
+    color: black;
+  }
+  .button1_3{
+    background-color: gray;
+    color: black;
+    border: 2px solid rgb(70, 70, 70);
+    border-radius: 12px;
+  }
+  .button1_3:hover{
+    background-color: var(--button-grey);
+    color: black;
+  }
+  .button2_1{
+    background-color: rgb(58, 79, 107);
+    color: black;
+    border: 2px solid lightgreen;
+  }
+  
+  .button2_1:hover{
+    background-color: var(--button-green);
+    border: 2px solid rgb(88, 143, 88);
+  color: black;
+  }
+
+  .button2_2{
+    background-color: rgba(255, 79, 79, 0);
+    color: black;
+    border: 2px solid rgb(204, 0, 0);
+  }
+  .button2_2:hover{
+    background-color: red;
+    color: whitesmoke;
+    border-color: tomato;
+  }
+  .button2_3{
+    background-color: rgba(135, 206, 250, 0);
+  color: black;
+  border: 2px solid rgb(135, 206, 250) ;
+  }
+  .button2_3:hover{
+    background-color: var(--button-blue);
+    color: black;
+    border:2px  solid rgb(118, 181, 221);
+  }
+   
+  
+  .button3_1{
+    background:transparent;
+    color: black;
+    border: 2px solid orange;
+    border-radius: 12px;
+  }
+  .button3_1:hover{
+    background-color: var(--button-orange);
+    color: black;
+  }
+   
+
+  .button3_2{
+    background:transparent;
+    color: black;
+    border: 2px solid yellow;
+    border-radius: 12px;
+  }
+  .button3_2:hover{
+    background-color: var(--button-yellow);
+    color: black;
+  }
+   
+
+  .button3_3{
+    background:transparent;
+    color: black;
+    border: 2px solid grey;
+    border-radius: 12px;
+  }
+  .button3_3:hover{
+    background-color: var(--button-orange);
+    color: black;
+  }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="flat-button">
+    <h2>Flat</h2>
+    <button class="button1 button "> Register</button>
+    <button class="button2 button"> Clear</button>
+    <button class="button3 button"> Submit</button>
+  </div>
+</div>
+  <div class="container">
+  <div class="round-button">
+    <h2>Round</h2>
+    <button class="button1_1 button "> Register</button>
+    <button class="button1_2 button"> Clear</button>
+    <button class="button1_3 button"> Submit</button>
+  </div>
+</div>
+  <div class="container">
+  <div class="flat-ghost">
+    <h2>Flat Ghost</h2>
+    <button class="button2_1 button "> Register</button>
+    <button class="button2_2 button"> Clear</button>
+    <button class="button2_3 button"> Submit</button>
+  </div>
+</div>
+  <div class="container">
+  <div class="round-ghost">
+    <h2>Round ghost</h2>
+    <button class="button3_1 button "> Register</button>
+    <button class="button3_2 button"> Clear</button>
+    <button class="button3_3 button"> Submit</button>
+  </div>
+</div>
+</body>
+</html>

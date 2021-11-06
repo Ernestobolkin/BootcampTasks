@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body
+    {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      align-items:center;
+      background: rgb(175, 124, 124);
+    }
+    /* .parg
+    {
+      display: flex;
+      background-color: lightgrey;
+      border: 2px solid black;
+      width: 50vw;
+    } */
+    a 
+    {
+      position: relative;
+      text-decoration: none;
+      color: ;
+    }
+    a:before
+    {
+      content: ' ';
+      position: absolute;
+      background: rgb(0, 0, 0);
+      width: 20px;
+      height: 20px;
+      top: -22px;
+      left: 25px;
+      transform: rotate(45deg);
+      display: none;
+      
+    }
+    a:after
+    {
+      content: 'some text test  test  test  test  test  test  test  test  test ';
+      background: rgb(240, 240, 240);
+      border: 2px solid rgb(0, 0, 0);
+      border-radius: 20px;
+      padding: 5px;
+      left: 0;
+      top:-60px;
+      line-height: 20px;
+      width: 205px;
+      font-size: 0.8rem;
+      color: rgb(0, 55, 87);
+      display: none;
+      position: absolute;
+    }
+    .tooltip:hover
+    {
+      font-size: 1.1rem;
+    }
+    a:hover::before
+    {
+      display: none;
+    }
+    a:hover::after
+    {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="parg"><p>Lorem ipsum, dolor sit amet consectetur <a href=”#” class="tooltip">adipisicing</a> elit. Debitis neque repudiandae reprehenderit. Facilis nobis enim repellendus sed iure officiis obcaecati quam delectus rerum, praesentium sunt ea omnis pariatur voluptatum animi consequuntur cupiditate ut aperiam, magni ex qui. Ad provident ipsam tenetur soluta fugiat vitae ut!</p></div>
+</body>
+</html>

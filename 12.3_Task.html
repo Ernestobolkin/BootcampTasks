@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+*
+{
+margin: 0;
+padding: 0;
+}
+.allpage
+{
+position: absolute;
+width: 100vw;
+height: 100vh;
+}
+.allpage header
+{
+  
+  border: 10px solid whitesmoke;
+  padding:20px 20px ;
+  background-color: peru;
+  text-align: center;
+}
+.allpage aside
+{
+  border: 4px solid whitesmoke;
+  width: 20vw;
+  height: 80vh;
+  background-color: purple;
+}
+.allpage main
+{
+position: absolute;
+right:0 ;
+top: 78px;
+width: 80vw;
+height: 80vh;
+border: 4px solid whitesmoke;
+background-color: rgb(81, 197, 162);
+}
+.allpage footer
+{
+  border: 4px solid whitesmoke;
+background-color: papayawhip;
+width: 100vw;
+height: 20vh;
+}
+@media(max-width: 1200px)
+  {
+    .allpage aside
+    {
+      width: 100%;
+      float: left;
+    }  
+    .allpage main
+    {
+      display: none;
+    }
+  }
+
+</style>
+<body>
+  <div class="allpage">
+    <header>Header</header>
+    <div>
+      <aside>Side</aside>
+      <main>Main</main>
+    </div>
+    <footer>Footer</footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div
+    {
+      height: 20vh;
+      width: 30vw;
+      background: rgb(183, 0, 255);
+      position: relative;
+    }
+
+    div:after
+    {
+      content: '';
+      height: 20vh;
+      width: 15vw;
+      right: 0;
+      position: absolute;
+      background-color: rgb(250, 37, 0);
+    }
+    div:hover
+    {
+      content: ' ';
+      background-color:blue ;
+      left: 0;
+      transition-delay: 1s;
+    }
+
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>
