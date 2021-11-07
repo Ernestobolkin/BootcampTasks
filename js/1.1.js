@@ -1,0 +1,11 @@
+let name = "Ernest";
+let lastName = "Tobolkin"
+let fullName = name +  " " +lastName;
+let number = 20;
+let boolnumber = 1;
+let bool1= true;
+let bool2= false;
+let y = 15;
+let x = y;
+let nl = null;
+let symb = '❅';
