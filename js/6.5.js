@@ -1,15 +1,28 @@
 //1
-let arr1 = new Array(100).fill({'test':'test-1'});
+let arr1 = new Array(100).fill({'test':'100'});
 // console.log(arr1);
 
 //2
 let arr2 = Array.from(Array(100).keys());
-// console.log(arr1)
+const arrayLikeobj = { length: 100}
+let arr21 = Array.from(Array, (_,index)=> index +1);
+// let arr21 = Array.from(Array(100).keys());
+
+console.log(arr21)
 
 //3
-let obj1 = {a:1,b:2,c:3,d:4};
+let obj1 = {
+  a:'one',
+  b:'two',
+  c:'three',
+  d:'four',
+  2:'testing_keys',
+  10:'testing_keys2'
+};
 let arr3 =Object.values(obj1)
 // console.log(arr3);
+// console.log(obj1['10'],obj1.a);
+
 
 //4
 let names = ['Ali','Mike','john','Ben'];
@@ -31,4 +44,4 @@ let test2= arr5.slice();
 let arr6=[1,2,3,4,5];
 let neWarr6= arr6;
 neWarr6.splice(0,3);
-console.log(neWarr6,arr6)
+// console.log(neWarr6,arr6)
