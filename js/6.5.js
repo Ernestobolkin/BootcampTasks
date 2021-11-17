@@ -1,14 +1,11 @@
 //1
-let arr1 = new Array(100).fill({'test':'100'});
+let arr1 = Array(100).fill('test');
 // console.log(arr1);
 
 //2
 let arr2 = Array.from(Array(100).keys());
-const arrayLikeobj = { length: 100}
-let arr21 = Array.from(Array, (_,index)=> index +1);
-// let arr21 = Array.from(Array(100).keys());
 
-console.log(arr21)
+// console.log(arr2)
 
 //3
 let obj1 = {
@@ -19,15 +16,13 @@ let obj1 = {
   2:'testing_keys',
   10:'testing_keys2'
 };
-let arr3 =Object.values(obj1)
-// console.log(arr3);
-// console.log(obj1['10'],obj1.a);
+// console.log(Object.keys(obj1));
+// console.log(Object.values(obj1));
 
 
 //4
 let names = ['Ali','Mike','john','Ben'];
-let obj2 = Object.assign({},names)
-// console.log(obj2)
+// console.log(Object.assign({},names))
 
 //5
 let arr4=[1,2,3,4];

@@ -16,7 +16,7 @@ const candyStore = {
   cashRegister: 200,
 };
 
-//  return candyStore.filter(candy=> candy.name.includes(id))
+function getCandyProperty(candyStore, propertyName) {}
 //1
 function getCandy(candyStore, id) {
   const theCandys = candyStore.candies;
@@ -33,26 +33,24 @@ function getPrice(candyStore, id) {
   return `The price: ${candy.price}`;
 }
 
-// console.log(getPrice(candyStore,"5hd7y"))
+// console.log(getPrice(candyStore,"5hd7y")) // price ==> 5
+// console.log(getPrice(candyStore,"as12f")) // price ==> 12
 
 // 3
 function addCandy(candyStore, id, name, price) {
   const theCandys = candyStore.candies;
-  const obj = { name , id, price};
+  const obj = { name, id, price };
   theCandys.push(obj);
-  
 }
-addCandy(candyStore,"Snickers","jgk57f",10);
-//  console.log(candyStore);
+// addCandy(candyStore, "jgk57f", "Snickers", 10);
+// console.log(candyStore);
 
 //4
 function buy(candyStore, id) {
   const theCandys = candyStore.candies;
   const candy = theCandys.find((element) => element.id === id);
-  candy.amount-=1;
-  candyStore.cashRegister=candyStore.cashRegister-candy.price;
-
+  candy.amount -= 1;
+  candyStore.cashRegister = candyStore.cashRegister - candy.price;
 }
-buy(candyStore,"as12f");
-console.log(candyStore);
-
+// buy(candyStore,"as12f");
+// console.log(candyStore);

@@ -1,11 +1,11 @@
-const Book = {
-  'book-name': 'text part 2',
-  'written': 'mr.text',
-  'year': '2000',
-  'about': 'text fantasy',
+const book = {
+  book_name: 'text part 2',
+  written: 'mr.text',
+  year: 2000,
+  about: 'text fantasy',
 };
-function description(Book){
-  return `The book ${Book['book-name']} was written by ${Book['written']} in the year ${Book['year']}`
+function description(book){
+  return `The book ${book.book_name} was written by ${book.written} in the year ${book.year}`
 }
   
-console.log(description(Book))
+console.log(description(book))

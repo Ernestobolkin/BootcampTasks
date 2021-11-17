@@ -3,12 +3,15 @@ const test = {
   st : 3,
   21 : 'a'
 }
-const swapObjProp = obj => {
- let res = {};
- for(let key in obj){
-   res[obj[key]]=key;
-  }
-  return res;
+const valuesSwapped = (obj) =>{
+  const tempObj = {};
+  Object.keys(obj).forEach(key => {
+    tempObj[obj[key]] = key;
+  });
+  console.log(Object.entries(obj))
 }
 
-console.log(swapObjProp(test))
+valuesSwapped(obj)
+
+console.log(valuesSwapped(test))
+

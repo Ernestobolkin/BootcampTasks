@@ -46,9 +46,8 @@ const showFirstAndLast = (arr) => {
 
 // console.log(showFirstAndLast(array3));
 
-
 //4
-const string = "lajhak jbgakphltmc aa uuuu unooaoiao ciby wicq asd b1";
+
 //aeiou
 const vowelCount = (str) => {
   let result = {};
@@ -67,11 +66,14 @@ const vowelCount = (str) => {
 
 // console.log(vowelCount(string))
 
+const string = "lajhak jbgakphltmc aa uuuu unooaoiao ciby wicq asd b1";
 
 
 //5
 const capitalize = (str) => {
-  return str.toUpperCase()
+  const words = str.split(" ");
+  return words.map((word) => word.toUpperCase()).join(" ");
 };
-// console.log(capitalize(string))
+console.log(capitalize(string))
 
+//6
