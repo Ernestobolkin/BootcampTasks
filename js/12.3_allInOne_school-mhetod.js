@@ -96,4 +96,3 @@ const addNewStudent = (id, name, age) => {
 // console.log("@===================@");
 // addNewStudent(14, "Ernest", 21);
 // console.log(school.students)
-
