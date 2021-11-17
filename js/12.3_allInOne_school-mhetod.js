@@ -54,15 +54,17 @@ const assignStudent = (id, subj) => {
   const teachers = school.teachers;
   const stuId = students.find((element) => element.id === id);
   const teacher = teachers.find((teacher) => teacher.subjects.includes(subj));
-  if (teacher.capacityLeft > 3) {
+  if (teacher.capacityLeft > 0) {
     teacher.students.push(stuId.name);
     teacher.capacityLeft -= 1;
   } else {
     return "Sorry no available teachers left";
   }
 };
-// console.log(assignStudent(10, "chemistry"));
-// console.log(school.teachers);
+// console.log("@===================@")
+assignStudent(10, "chemistry");
+assignStudent(11, "biology");
+// console.log(school.teachers[0]);
 
 //3
 const assignTeachersSubject = (id, subject) => {
@@ -73,10 +75,25 @@ const assignTeachersSubject = (id, subject) => {
   } else {
     subj.push(subject);
   }
-}
+};
 // console.log(assignTeachersSubject(1,'coocking'))
 // console.log(school.teachers[0])
 
-
 //4
 // 4. Create a new method of anything you want.
+const addNewStudent = (id, name, age) => {
+  const students = school.students;
+  const newStudent = { id, name, age };
+
+  const allTheId = students.find((element)=>element.id>=id)
+  if (allTheId) {
+    console.log("Someting Went Wrong, Try another id");
+  } else {
+    students.push(newStudent);
+    console.log(`Congratulations ${name}, Welcome to our school`);
+  }
+};
+// console.log("@===================@");
+// addNewStudent(14, "Ernest", 21);
+// console.log(school.students)
+
