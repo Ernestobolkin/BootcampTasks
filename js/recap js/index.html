@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/carAPI.js"></script>
+</head>
+
+<body>
+<p>
+  1) setPropertyBrandToAllCustumerCars:(){} // @return (nothing) set all customers cars model object the currect brand
+  (like we did for the sellers)
+  <br>
+
+  2) sortAndFilterByYearOfProduction:(fromYear,toYear){} // return{Array of models} filter and Sort in a Descending
+  order all vehicles for sale by year of production.
+  <br>
+  3) sortAndFilterByPrice:(fromPrice,toPrice){} // return{Array of models} filter and Sort in a Descending order all
+  vehicles for sale by price of the cars.
+  <br>
+  4 ) sellCar: (agencyId, customerId, carBrand, carModel){} return (nothing) sell customer car for specific customer,
+  - 4a. Subtract the vehicle amount + 17% (tax) from the customer's cash.
+  - 4b. Add the vehicle value to the car agency cash.
+  - 4c. Change the car owner's id to the customer's id.
+  - 4d. Remove the car from the array of the agency's car models.
+  - 4e. Add the car to the client cars array.
+  <br>
+  Taxes Authority:
+  - 4f. Pay 17 percent of the vehicle value to the tax authority. (add the amount to totalTaxesPaid)
+  - 4g. Increase the number of transactions made in one (numberOfTransactions)
+  - 4h. Add the vehicle amount + tax to sumOfAllTransactions
+  - Check that there is the requested vehicle at the agency in not return 'The vehicle does not exist at the agency'
+  - Check that the customer has enough money to purchase the vehicle, if not return 'The customer does not have enough
+  money'
+  <br>
+  - Try to divide the tasks into several functions and try to maintain a readable language.
+</p>
+</body>
+
+</html>

@@ -13,4 +13,4 @@ function countOccurrences(str, char) {
   }
   return counter;
 }
-console.log(countOccurrences("ini mini miny moe", "n"));
+console.log(countOccurrences("ini mini mnniny moe", "n"));

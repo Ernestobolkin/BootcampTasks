@@ -39,14 +39,15 @@ const school = {
   ],
   findPerson(type, id) {
     if (!this[type]) {
-      return "Type Not Found";
+      console.error("Type Not Found");
+      return;
     }
     return this[type].find((element) => element.id === id);
   },
 };
 
 //1
-// console.log(school.findPerson('students',10))
+// console.log(school.findPerson('studentssss',10))
 
 //2
 const assignStudent = (id, subj) => {
@@ -57,26 +58,35 @@ const assignStudent = (id, subj) => {
   if (teacher.capacityLeft > 0) {
     teacher.students.push(stuId.name);
     teacher.capacityLeft -= 1;
+    console.log(
+      `Congratulations, ${stuId.name} you are now in ${subj} class with Professor ${teacher.name}`
+    );
   } else {
-    return "Sorry no available teachers left";
+    console.log("Sorry no available teachers left");
   }
 };
-// console.log("@===================@")
-assignStudent(10, "chemistry");
-assignStudent(11, "biology");
-// console.log(school.teachers[0]);
+console.log("@===================@");
+assignStudent(10, "history"); // teacher id 2 Jennifer
+assignStudent(11, "biology"); // teacher id 1 Howard
+// assignStudent(14, "biology"); // teacher id 1 Howard
+console.log(school.teachers);
 
 //3
+// 3. A method called “assignTeachersSubject” that takes two
+// arguments, the teacher’s id, a new subject.
+// Assign the new subject to that particular teacher if that
+// subject doesn’t exist in their array of subjects
+
 const assignTeachersSubject = (id, subject) => {
   const teacher = school.findPerson("teachers", id);
-  const subj = teacher.subjects;
-  if (subj.includes(subject)) {
+  if (teacher.subjects.includes(subject)) {
     return "subject already exists";
   } else {
-    subj.push(subject);
+    teacher.subjects.push(subject);
   }
-};
+// };
 // console.log(assignTeachersSubject(1,'coocking'))
+// console.log(assignTeachersSubject(1,'chemistry'))
 // console.log(school.teachers[0])
 
 //4
@@ -85,7 +95,7 @@ const addNewStudent = (id, name, age) => {
   const students = school.students;
   const newStudent = { id, name, age };
 
-  const allTheId = students.find((element)=>element.id>=id)
+  const allTheId = students.find((element) => element.id >= id);
   if (allTheId) {
     console.log("Someting Went Wrong, Try another id");
   } else {
