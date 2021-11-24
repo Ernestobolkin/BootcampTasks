@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,
+initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Header</h1>
+  <p>Paragraph</p>
+  <a href="#">link</a>
+  <img src="" alt="" />
+  <div class="x">Div with a class</div>
+  <div id="y">Div with an id</div>
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <script>
+    // 1
+    const el = document.body;
+    // console.log(el)
+    // 2
+    const el2 = document.querySelector("body");
+    // console.log(el2)
+    // 3
+    const input = document.querySelectorAll("input");
+    input.forEach((el) => {
+      // console.log(el)
+    });
+    const input2 = document.getElementsByTagName("input");
+
+    for (let i = 0; i < input2.length; i++) {
+      // console.log(input2[i])
+    }
+  </script>
+</body>
+
+</html>
