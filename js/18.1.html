@@ -32,10 +32,9 @@ initial-scale=1.0" />
       // console.log(el)
     });
     const input2 = document.getElementsByTagName("input");
-
-    for (let i = 0; i < input2.length; i++) {
-      // console.log(input2[i])
-    }
+    [...input2].forEach((el)=>{
+      // console.log(el);
+    })
   </script>
 </body>
 

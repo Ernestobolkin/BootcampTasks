@@ -28,8 +28,14 @@ initial-scale=1.0" />
   <div id="description">
     Select me and change my display property if you dare!
   </div>
+  <br>
+  <button>trigger</button>
   <script>
-    document.querySelector('h1').style.color = "blue";
+    const header = document.querySelector('h1')
+    const btn = document.querySelector('button')
+    btn.addEventListener('click',()=>{
+      header.style.color = "blue";
+    })
     document.querySelector('.paragraph').style.fontSize =  "30px";
     document.querySelector('#description').style.display =  "inline-block";
     document.querySelector('body').style.backgroundColor =  "green";

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+
+    <label for="numSmile">How many smiles do you want?</label><br>
+    <input type="text" id="numSmile">
+    <button type="submit">Submit</button>
+  </div>
+  <span style="font-size: 50px;"></span>
+
+  <script>
+    alert("Please enter only numbers")
+    const smile = '😛'
+    const span = document.querySelector('span');
+    const number = document.querySelector('#numSmile');
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', () => {
+      const val = +number.value
+      if (typeof val === "number" && number.value !== NaN && val >= 0) 
+      {
+        span.textContent = smile.repeat(number.value);
+      } else {
+        alert('please enter a valid number!!')
+      }
+    });
+  </script>
+</body>
+
+</html>
