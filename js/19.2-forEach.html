@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+
+<body>
+  <script>
+    const users = [
+      {
+        id: 167464,
+        firstName: "Jimmy",
+        lastName: "Arnold",
+        email: "jimmya@gmail.com",
+      },
+      {
+        id: 578447,
+        firstName: "Martha",
+        lastName: "Goldman",
+        email: "gold@hotmail.com",
+      },
+      {
+        id: 864578,
+        firstName: "Tim",
+        lastName: "Burton",
+        email: "timmy.hotmail.com",
+      },
+    ];
+    // creating an ul to the html
+    let ul = document.createElement('ul');
+    document.body.appendChild(ul)
+    ul.style.listStyle = "none"
+
+
+    // creating a varibal that contains the FIRST NAME and the LAST NAME of the users
+    let fullName = [];
+    let dataId = [];
+    users.forEach((value) => {
+      fullName.push(value.lastName + " " + value.firstName)
+      dataId.push(value.id)
+    })
+
+
+    // creating an li list by the numbers of the users(in this case li will be 3)
+    users.forEach((user, i) => {
+      let li = document.createElement('li');
+      ul.appendChild(li);
+      // adding the fullname var to the li
+      li.textContent += fullName[i]
+      console.log(li)
+      // easy way to add new atribute
+      // li.dataset.id = dataId[i]
+
+      // the hard way to add atribute
+      let att = document.createAttribute('data-id');
+      att.value = dataId[i]
+      li.setAttributeNode(att)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .card {
+      border: 1px solid black;
+      width: max-content;
+      height: 100px;
+    }
+
+    .inputs input {
+      margin-top: 10px;
+      width: 15px;
+    }
+
+    .card .btn {
+      width: 50px;
+      text-align: center;
+      color: wheat;
+      background-color: gray;
+      margin: 20px 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Text to copy</h2>
+  <h3>123456</h3>
+  <p></p>
+  <div class="card">
+    <form action="">
+      <div class="inputs">
+        <input id="n1" type="">
+        <input id="n2" type="">
+        <input id="n3" type="">
+        <input id="n4" type="">
+        <input id="n5" type="">
+        <input id="n6" type="">
+      </div>
+      <div class="container">
+        <button class="btn">Verify</button>
+      </div>
+    </form>
+  </div>
+  <script>
+
+    input1 = document.querySelector('#n1')
+    input2 = document.querySelector('#n2')
+    input3 = document.querySelector('#n3')
+    input4 = document.querySelector('#n4')
+    input5 = document.querySelector('#n5')
+    input6 = document.querySelector('#n6')
+    btn = document.querySelector('.btn')
+    text = document.querySelector('p')
+    form = document.querySelector('form')
+    inputs = document.querySelector('.inputs').children
+
+    // btn.addEventListener('click', (testing))
+
+
+    input6.addEventListener('input', () => {
+      testing();
+    })
+
+
+    function testing() {
+      for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.length == 1) {
+          console.log(inputs[i].value.length);
+          if (input1.value == 1
+            && input2.value == 2
+            && input3.value == 3
+            && input4.value == 4
+            && input5.value == 5
+            && input6.value == 6
+          ) {
+            text.textContent = "verified"
+          } else {
+            text.textContent = "somthing went wrong "
+          }
+        }
+      }
+    }
+
+
+
+
+    document.addEventListener('paste', (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      let vl = event.clipboardData.getData("text");
+      for (let i = 0; i < vl.length; i++) {
+        inputs[i].value = vl[i]
+      }
+      testing();
+    });
+
+
+    document.addEventListener('keyup', (event) => {
+      if (event.key === 'Backspace') {
+        return;
+      }
+      switch (event.target.id) {
+        case 'n1': document.querySelector('#n2').focus();
+          break;
+        case 'n2': document.querySelector('#n3').focus();
+          break;
+        case 'n3': document.querySelector('#n4').focus();
+          break;
+        case 'n4': document.querySelector('#n5').focus();
+          break;
+        case 'n5': document.querySelector('#n6').focus();
+          break;
+      }
+    })
+  </script>
+</body>
+</html>
