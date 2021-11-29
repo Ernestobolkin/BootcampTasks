@@ -19,10 +19,18 @@
     flex-direction: column;
   }
 
-  button{
+  button {
     margin: 20px 0 0 50px;
     width: 100px;
     height: 30px;
+  }
+
+  .lorem {
+    display: none;
+  }
+
+  .lorem2 {
+    display: none;
   }
 </style>
 
@@ -31,21 +39,34 @@
   <textarea name="" id="someText" cols="30" rows="10"></textarea>
   <button type="button">submit!!</button>
   <p></p>
-
+  <p class="lorem">Lorem, ipsum.</p>
+  <p class="lorem2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, deserunt voluptate nam modi
+    dignissimos, ullam consequuntur optio vero labore veritatis, cumque excepturi voluptas voluptatum repellat.</p>
   <script>
     const Content = document.querySelector("#someText");
     const btn = document.querySelector("button");
     const outPut = document.querySelector("p");
+    const testing = document.querySelector(".lorem");
+    const testing2 = document.querySelector(".lorem2");
+    const buttonH4 = document.querySelector("h4");
 
-      btn.addEventListener('click', () => {
-        const spl = (Content.value).split("").join(' ')
+    buttonH4.addEventListener("click", () => {
+      Content.innerHTML = testing.innerText
+    })
+    buttonH4.addEventListener("dblclick", () => {
+      Content.innerHTML = testing2.innerText
+    })
 
-        if (spl.length >= 100) {
-          outPut.innerText = "Thank you, Will be in touch soon!!"
-        } else {
-          outPut.innerText = "Please write more about yourself!"
-        }
-      })
+    btn.addEventListener('click', () => {
+      const spl = (Content.value).split("").join(' ')
+
+      if (spl.length >= 100) {
+        outPut.innerText = "Thank you, Will be in touch soon!!"
+        Content.innerHTML = ""
+      } else {
+        outPut.innerText = "Please write more about yourself!"
+      }
+    })
   </script>
 </body>
 

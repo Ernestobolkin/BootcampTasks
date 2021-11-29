@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+div{
+  border-radius: 0%;
+}
+</style>
+<body>
+
+  <script>
+    const h1 = document.createElement("h1");
+    const h2 = document.createElement("h2");
+    const h3 = document.createElement("h3");
+    const p1 = document.createElement("p");
+    const p2 = document.createElement("p");
+    const block = document.createElement("div");
+
+    h1.innerText = "Welcome"
+    h2.innerText = "To"
+    h3.innerText = "My site"
+    document.body.style.background = "#a9a9a9"
+    document.body.style.display = "flex"
+    document.body.style.flexDirection = "column"
+    document.body.style.alignItems = "center"
+    h1.style.color = "yellow"
+    h2.style.color = "red"
+    h3.style.color = "green"
+    h1.style.cursor = "pointer"
+    h2.style.cursor = "pointer"
+    h3.style.cursor = "pointer"
+    block.style.cursor = "pointer"
+
+    h1.addEventListener("click", () => {
+      p1.innerText = "this is my site using only JS"
+    })
+    h2.addEventListener("click", () => {
+      p2.innerText = "ill will show you some stuff"
+      p1.style.display = "none"
+    })
+    h3.addEventListener("click", () => {
+      alert("try and click the box")
+      block.style.width = "100px"
+      block.style.height = "50px"
+      block.style.background = "lightcoral"
+      block.style.position = "absolute"
+      p2.style.display = "none"
+      document.body.appendChild(block)
+    })
+
+    block.addEventListener('mouseover', function () {
+      pushArr.forEach((element)=>{
+        element.style.display = "none"
+      })
+      const height = Math.floor(Math.random() * window.innerHeight);
+      const width = Math.floor(Math.random() * window.innerWidth);
+      block.style.left = `${width}px`;
+      block.style.top = `${height}px`;
+      let randColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      let randColor2 = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      let random = Math.floor(Math.random()*100)
+      let random2 = Math.floor(Math.random()*100)
+      // console.log(`${randomBorder}%`);
+      // block.style.width = `${random}rem`
+      // block.style.height = `${random2}rem`
+      block.style.background = `${randColor}`
+      block.style.color = `${randColor2}`
+      block.style.borderRadius =`${random}%`
+    });
+
+    block.addEventListener("click", () => {
+      h1.innerText = 'YOU GOT ME!';
+      document.body.style.backgroundColor = 'green';
+      block.style.display = "none"
+    })
+
+
+    let pushArr = [h1, h2, h3, p1, p2];
+    pushArr.forEach(element => {
+      console.log(pushArr);
+      document.body.appendChild(element)
+    });
+  </script>
+</body>
+
+</html>
