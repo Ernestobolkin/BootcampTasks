@@ -19,7 +19,8 @@
     }
 
     .card .btn {
-      width: 50px;
+      width: 60px;
+      text-align: center;
       text-align: center;
       color: wheat;
       background-color: gray;
@@ -33,17 +34,17 @@
   <h3>123456</h3>
   <p></p>
   <div class="card">
-    <form action="">
+    <form action="/form_submission">
       <div class="inputs">
-        <input id="n1" type="">
-        <input id="n2" type="">
-        <input id="n3" type="">
-        <input id="n4" type="">
-        <input id="n5" type="">
-        <input id="n6" type="">
+        <input id="n1">
+        <input id="n2">
+        <input id="n3">
+        <input id="n4">
+        <input id="n5">
+        <input id="n6">
       </div>
       <div class="container">
-        <button class="btn">Verify</button>
+        <button class="btn">Restart</button>
       </div>
     </form>
   </div>
@@ -56,13 +57,13 @@
     input5 = document.querySelector('#n5')
     input6 = document.querySelector('#n6')
     btn = document.querySelector('.btn')
-    text = document.querySelector('p')
+    outputDisplayElement = document.querySelector('p')
     form = document.querySelector('form')
     inputs = document.querySelector('.inputs').children
 
     // btn.addEventListener('click', (testing))
 
-
+    // TODO: Check this for all inputs
     input6.addEventListener('input', () => {
       testing();
     })
@@ -71,7 +72,6 @@
     function testing() {
       for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value.length == 1) {
-          console.log(inputs[i].value.length);
           if (input1.value == 1
             && input2.value == 2
             && input3.value == 3
@@ -79,9 +79,9 @@
             && input5.value == 5
             && input6.value == 6
           ) {
-            text.textContent = "verified"
+            outputDisplayElement.textContent = "Verified"
           } else {
-            text.textContent = "somthing went wrong "
+            outputDisplayElement.textContent = "Something went wrong"
           }
         }
       }
@@ -93,16 +93,21 @@
     document.addEventListener('paste', (event) => {
       event.stopPropagation();
       event.preventDefault();
-      let vl = event.clipboardData.getData("text");
-      for (let i = 0; i < vl.length; i++) {
-        inputs[i].value = vl[i]
+      let value = event.clipboardData.getData("text");
+      for (let i = 0; i < Math.min(value.length, inputs.length); i++) {
+        inputs[i].value = value[i];
       }
       testing();
     });
 
 
+    // document.addEventListener('keyup',(event)=>{
+    //   console.log(event.keyCode)
+    // })
+
     document.addEventListener('keyup', (event) => {
-      if (event.key === 'Backspace') {
+      // 8 is backspace, 32 is space
+      if (event.keyCode === 8 || event.keyCode === 32) {
         return;
       }
       switch (event.target.id) {
@@ -120,4 +125,5 @@
     })
   </script>
 </body>
+
 </html>

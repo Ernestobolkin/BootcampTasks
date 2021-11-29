@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #someText {
+    width: 200px;
+    height: 140px;
+  }
+
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button{
+    margin: 20px 0 0 50px;
+    width: 100px;
+    height: 30px;
+  }
+</style>
+
+<body>
+  <h4>Write about yourself</h4>
+  <textarea name="" id="someText" cols="30" rows="10"></textarea>
+  <button type="button">submit!!</button>
+  <p></p>
+
+  <script>
+    const Content = document.querySelector("#someText");
+    const btn = document.querySelector("button");
+    const outPut = document.querySelector("p");
+
+      btn.addEventListener('click', () => {
+        const spl = (Content.value).split("").join(' ')
+
+        if (spl.length >= 100) {
+          outPut.innerText = "Thank you, Will be in touch soon!!"
+        } else {
+          outPut.innerText = "Please write more about yourself!"
+        }
+      })
+  </script>
+</body>
+
+</html>

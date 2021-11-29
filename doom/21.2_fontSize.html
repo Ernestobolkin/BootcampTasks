@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  h1 {
+    color: rebeccapurple
+  }
+
+  h2 {
+    color: aqua;
+  }
+</style>
+
+<body>
+  <h1>some text</h1>
+  <h2>some text</h2>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, minima natus! Sequi ut ex animi harum libero
+    sint neque praesentium!</p>
+  <input class="increase" type="button" value="+">
+  <input class="decrease" type="button" value="-">
+
+  <script>
+    const body = document.querySelector('body')
+    const increase = document.querySelector('.increase')
+    const decrease = document.querySelector('.decrease')
+
+    // const font = getComputedStyle(body).fontSize;
+    let font = parseInt(getComputedStyle(body).getPropertyValue("font-size"));
+
+    // let font = 16;
+
+
+    // console.log(font);
+    increase.addEventListener('click', () => {
+      font += 2
+      if (font >= 10 && font <= 100) {
+        body.style.fontSize = `${font}px `
+        console.log(font);
+      }
+    })
+
+
+
+    decrease.addEventListener('click', () => {
+      font -= 2
+      if (font >= 10 && font <= 100) {
+        body.style.fontSize = `${font}px `
+        console.log(font);
+      }
+    })
+
+  </script>
+</body>
+
+</html>

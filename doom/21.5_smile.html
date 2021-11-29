@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>How many smiles o you want?</h1>
+  <input type="text" name="" id="num">
+  <input type="submit" value="X" id="sub">
+  <div><span></span></div>
+  <h2></h2>
+
+
+  <script>
+    const input = document.querySelector('#num')
+    const btn = document.querySelector('#sub')
+    const span = document.querySelector('span')
+    const h2 = document.querySelector('h2')
+    const smile = '😈';
+    
+
+    btn.addEventListener('click', submit)
+
+
+    function submit() {
+      const value = +input.value
+      if (typeof value === "number" && typeof value !== NaN && value >= 0) {
+        span.textContent = smile.repeat(input.value)
+        console.log(typeof value);
+        console.log(value);
+      } else {
+        h2.textContent = "please enter a number"
+        console.log(typeof value);
+        console.log(value);
+      }
+    }
+  </script>
+
+</body>
+
+</html>
