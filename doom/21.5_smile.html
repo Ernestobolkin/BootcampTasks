@@ -31,12 +31,10 @@
       const value = +input.value
       if (typeof value === "number" && typeof value !== NaN && value >= 0) {
         span.textContent = smile.repeat(input.value)
-        console.log(typeof value);
-        console.log(value);
-      } else {
+      } else if(value < 0 ){
+        h2.textContent = "please enter a valid number"
+      }else{
         h2.textContent = "please enter a number"
-        console.log(typeof value);
-        console.log(value);
       }
     }
   </script>
