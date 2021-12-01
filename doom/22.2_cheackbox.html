@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #cheack {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .photo {
+      background: url('./21.4/on.jpeg');
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 222px;
+      height: 227px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" name="" id="check">
+  <div class="photo"></div>
+  <script>
+
+    const check = document.querySelector("#check")
+    const container = document.querySelector("div")
+
+    check.addEventListener('change', () => {
+      if (check.checked) {
+        container.style.display = "block";
+        console.log("cheackd");
+      }else{
+        container.style.display = "none";
+        console.log("no");
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+.racer_table {
+  margin: auto;
+}
+
+td {
+  height: 40px;
+  width: 50px;
+  border: 1px solid whitesmoke;
+}
+
+td.active {
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;
+  /* transform: translateX(570px); */
+
+}
+
+#player1-race > td.active {
+  background-image: url(images/player_1.png);
+}
+
+#player2-race td.active {
+  background-image: url(images/player_2.png);
+}
+
+td:last-child {
+  background-image: url(images/finish.png);
+  background-size: cover;
+}
+
+td:last-child.active {
+  background-size: 90%, cover;
+  background-position: center, top left;
+}
+
+#player1-race td:last-child.active {
+  background-image: url(images/player_1.png), url("images/finish.png");
+}
+
+#player2-race td:last-child.active {
+  background-image: url(images/player_2.png), url("images/finish.png");
+}
+
+.winner{
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #2C061F;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  visibility:hidden;
+}
+button{
+  font-size: 1.2rem;
+  width: min-content;
+  height: min-content;
+}
+.winner h1{
+  height: min-content;
+  margin-top: 200px;
+  font-size: 4rem;
+  text-shadow: 3px 3px 0px#d891162a;
+}
+h3{
+  font-size: 3rem;
+  color: #D89216;
+}
+h2{
+  color: #E1D89F;
+}
+button{
+  color: wheat;
+  background: #374045;
+}

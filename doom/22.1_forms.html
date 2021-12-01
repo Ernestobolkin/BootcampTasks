@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input {
+      margin: 8px 0;
+    }
+
+    button {
+      margin: 10px 0;
+    }
+
+    textarea {
+      display: none;
+    }
+
+    #age {
+      width: 25px;
+    }
+
+    #o {
+      color: green;
+      display: none;
+      margin-left: 20px;
+    }
+
+    #x {
+      color: red;
+      display: none;
+    }
+
+    div {
+      display: flex;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <form action="">
+    <input type="text" id="firstName" placeholder="First Name"><br>
+    <input type="text" id="age" placeholder="Age"><br>
+    <input type="email" id="mail" placeholder="Email"><br>
+    <button type="button" id="btn1">Submit</button>
+  </form>
+  <p></p>
+  <div>
+    <button type="button" id="x">X</button>
+    <button type="button" id="o">O</button>
+  </div>
+
+
+
+  <script>
+    const form = document.querySelector('form')
+    const succ = document.querySelector('.successfull')
+    const firstName = document.querySelector('#firstName')
+    const userAge = document.querySelector('#age')
+    const userMail = document.querySelector('#mail')
+    const button = document.querySelector('#btn1')
+    const submitNo = document.querySelector('#x')
+    const submitYes = document.querySelector('#o')
+    const outPutInfo = document.querySelector('p')
+    const outPutInfo2 = document.querySelector('h6')
+
+    button.addEventListener("click", () => {
+      const name = firstName.value
+      const age = userAge.value
+      const mail = userMail.value
+      if (name.length > 0 && age.length > 0 && mail.length > 0) {
+        outPutInfo.innerText = `Your name: ${name}, your age: ${age}, your email: ${mail}. do you agree?`;
+        submitNo.style.display = "block"
+        submitYes.style.display = "block"
+      }else{
+        outPutInfo.innerText = "Please Try again"
+      }
+    })
+    submitNo.addEventListener("click", () => {
+      outPutInfo.innerText = "";
+      submitNo.style.display = "none"
+      submitYes.style.display = "none"
+      age.value = ""
+      mail.value = ""
+      userAge.value = ""
+    })
+    submitYes.addEventListener("click", () => {
+      submitNo.style.display = "none";
+      submitYes.style.display = "none";
+      form.style.display = "none";
+      outPutInfo.style.display = "none";
+      alert("“congratulations you successfully sent this form")
+      window.location.reload()
+    })
+  </script>
+</body>
+
+</html>

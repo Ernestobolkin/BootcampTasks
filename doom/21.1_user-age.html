@@ -26,10 +26,16 @@
     const outPut = document.querySelector('p')
 
     btn.addEventListener('click', () => {
-      if(age.value >= 18){
-        outPut.textContent = 'you can drink appear'
-      }else{
-        outPut.textContent = 'you’re too young'
+      if (typeof +age.value === 'number') {
+        if (age.value >= 18) {
+          outPut.textContent = 'you can drink appear'
+        } else if (age.value < 0) {
+          outPut.textContent = 'please enter a valid number'
+        } else {
+          outPut.textContent = 'you’re too young'
+        }
+      } else {
+        outPut.textContent = 'please enter a number'
       }
     })
 

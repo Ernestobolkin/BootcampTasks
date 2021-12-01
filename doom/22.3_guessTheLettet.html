@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .guesses {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .letter {
+      border: 2px solid rgb(107, 107, 107);
+      width: 20px;
+      height: 20px;
+      text-align: center;
+    }
+
+    button {
+      display: none;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .win {
+      color: green;
+      display: none;
+    }
+
+    .uniq {
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Welcome To Guess My Letter</h2>
+    <div class="letter">?</div>
+    <h4 class="change">Guess My Letter</h4>
+    <h4 class="win">Right Letter</h4>
+  </div>
+  <div class="guesses">
+    <h4 class="uniq">Guess My Letter</h4>
+    <h3 class="h3">Keys guessed</h3>
+    <h3 class="winner"></h3>
+    <p></p>
+    <button type="button">Yes</button>
+  </div>
+
+
+  <script>
+    const letterGuess = document.querySelector('.letter');
+    const wrong = document.querySelector('.change');
+    const uniq = document.querySelector('.uniq');
+    const right = document.querySelector('.win');
+    const playAgain = document.querySelector('.h3');
+    const winner = document.querySelector('.winner');
+    const guessed = document.querySelector('p');
+    const button = document.querySelector('button');
+
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    const randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+    let guessedLetters = [];
+
+    let isGame = true
+    console.log(randomLetter);
+    document.addEventListener('keydown', (event) => {
+      const keyGuess = event.key.toLowerCase();
+      if (isGame) {
+        if (/^[a-zA-Z]$/.test(keyGuess)) {
+          playAgain.innerText = "Keys guessed";
+          if (guessedLetters.includes(keyGuess)) {
+            already(keyGuess)
+          } else {
+            wrong.style.display = "block";
+            if (keyGuess == randomLetter) {
+              win(keyGuess);
+            } else {
+              wrongLetter(keyGuess)
+            }
+            uniq.style.display = "none"
+            guessedLetters.push(keyGuess)
+          }
+        } else {
+          playAgain.innerText = "Please Enter a letter"
+        }
+        button.addEventListener('click', () => {
+          window.location.reload()
+        })
+      }
+    })
+
+    const already = (keyGuess) => {
+      uniq.style.display = "block";
+      wrong.style.display = "none";
+      uniq.innerText = `${keyGuess} has already been guessed `;
+    }
+
+    const wrongLetter = (keyGuess) => {
+      wrong.innerText = "Nope, wrong letter";
+      wrong.classList.add("red");
+      guessed.innerText += ` ${keyGuess},`;
+    }
+    const win = (keyGuess) => {
+      uniq.style.display = "none";
+      right.style.display = "block";
+      wrong.style.display = "none";
+      letterGuess.innerText = keyGuess;
+      winner.innerText = "Would you like to play again?";
+      button.style.display = "block";
+      guessed.style.display = "none";
+      playAgain.style.display = "none";
+      isGame = false;
+    }
+
+  </script>
+</body>
+
+</html>
