@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const Venusaur = new Pokemon("Venusaur", "Poison", ["Petal Blizzard", "Sludge Bomb", "Solar Beam"])
+
+    function Pokemon(name, type, attackList) {
+      this.pokemonName = name
+      this.pokemonType = type
+      this.attackList = attackList
+    }
+    Pokemon.prototype.callPokemon = function () { console.log(`I choose you ${this.pokemonName}`) }
+
+    Pokemon.prototype.pokemonAttackList = function (num) {
+      if (this.pokemonAttackList.length <= num) {
+        console.log(`${this.pokemonName} used ${this.attackList[num]}`)
+      } else {
+        console.log("there is no attack with this numver")
+      }
+    }
+
+    Venusaur.pokemonAttackList(1);
+    Venusaur.callPokemon()
+  </script>
+</body>
+
+</html>

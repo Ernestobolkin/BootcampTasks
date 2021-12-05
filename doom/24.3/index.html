@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    const Toyota = new Car("Toyota Corolla", 201230, 2021)
+
+    function Car(brand, price, year) {
+      this.car_Brand = brand
+      this.car_Price = price
+      this.car_Year = year
+    }
+
+    Car.prototype.printCar = function(){
+      console.log(`The car is ${this.car_Brand} and the price ${this.car_Price}, builded in ${this.car_Year} `);
+    }
+
+    Toyota.printCar()
+    
+  </script>
+</body>
+
+</html>
