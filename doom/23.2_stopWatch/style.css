@@ -1,0 +1,11 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clickContainer{
+  width: 200px;
+  height: 100px;
+  background: gray;
+  text-align: center;
+}

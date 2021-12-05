@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+</style>
+
+<body>
+  <!-- 1 -->
+  <!-- console.log(this);
+  when you console.log(this) it will show you all the functions and veriabls of the window prototype.
+  window is the global scope. -->
+
+  <!-- 2 -->
+  <!-- const myObj = {
+  name: "Timmy",
+  greet : () => {
+  console.log(`Hello ${this.name}`);
+  },
+  };
+  myObj.greet();
+  this function will show in the console only hello because this.name is targeting the global scope and not an inner
+  scope of myObj. the greet function is a key and the value is the function so to fix this you dont declare the function
+  as a value insede the obj -->
+
+  <!-- 3 -->
+  <!-- const myFuncDec = function () {
+    console.log(this);
+   };
+   I dont see any poit of this. console.log(this) will show the window prototype. -->
+
+  <!-- 4 -->
+  <!-- document.body.addEventListener("click", () => {
+    console.log(this);
+  });
+  the output sguld be window prototype and the function wont work becouse addEventListener need to have property. -->
+
+
+
+
+</body>
+
+<script>
+
+</script>
+
+</html>
