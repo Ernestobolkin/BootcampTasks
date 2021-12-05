@@ -64,11 +64,11 @@ button{
 .winner h1{
   height: min-content;
   margin-top: 200px;
-  font-size: 4rem;
+  font-size: 400%;
   text-shadow: 3px 3px 0px#d891162a;
 }
 h3{
-  font-size: 3rem;
+  font-size: 300%;
   color: #D89216;
 }
 h2{

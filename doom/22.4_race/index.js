@@ -24,7 +24,7 @@ document.addEventListener("keyup", (event) => {
     tdList1[count1 - 1].classList.remove("active");
     tdList1[count1].classList.add("active");
     if (tdList1[count1].classList.contains("finish")) {
-      setTimeout(function(){winner1()},1000)
+      setTimeout(()=>{winner1()},1000)
       count1 = undefined;
       count2 = undefined;
     }
@@ -34,7 +34,7 @@ document.addEventListener("keyup", (event) => {
     tblList2[count2 - 1].classList.remove("active");
     tblList2[count2].classList.add("active");
     if (tblList2[count2].classList.contains("finish")) {
-      setTimeout(function(){winner2()},1000)
+      setTimeout(()=>{winner2()},1000)
       count2 = undefined;
       count1 = undefined;
     }

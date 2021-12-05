@@ -62,72 +62,72 @@
   </div>
 
 
-  <script>
-    const letterGuess = document.querySelector('.letter');
-    const wrong = document.querySelector('.change');
-    const uniq = document.querySelector('.uniq');
-    const right = document.querySelector('.win');
-    const playAgain = document.querySelector('.h3');
-    const winner = document.querySelector('.winner');
-    const guessed = document.querySelector('p');
-    const button = document.querySelector('button');
+<script>
+  const letterGuess = document.querySelector('.letter');
+  const wrong = document.querySelector('.change');
+  const uniq = document.querySelector('.uniq');
+  const right = document.querySelector('.win');
+  const playAgain = document.querySelector('.h3');
+  const winner = document.querySelector('.winner');
+  const guessed = document.querySelector('p');
+  const button = document.querySelector('button');
 
-    const alphabet = "abcdefghijklmnopqrstuvwxyz";
-    const randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
-    let guessedLetters = [];
+  const alphabet = "abcdefghijklmnopqrstuvwxyz",
+  randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+  let guessedLetters = [];
 
-    let isGame = true
-    console.log(randomLetter);
-    document.addEventListener('keydown', (event) => {
-      const keyGuess = event.key.toLowerCase();
-      if (isGame) {
-        if (/^[a-zA-Z]$/.test(keyGuess)) {
-          playAgain.innerText = "Keys guessed";
-          if (guessedLetters.includes(keyGuess)) {
-            already(keyGuess)
-          } else {
-            wrong.style.display = "block";
-            if (keyGuess == randomLetter) {
-              win(keyGuess);
-            } else {
-              wrongLetter(keyGuess)
-            }
-            uniq.style.display = "none"
-            guessedLetters.push(keyGuess)
-          }
+  let isGame = true
+  console.log(randomLetter);
+  document.addEventListener('keydown', (event) => {
+    const keyGuess = event.key.toLowerCase();
+    if (isGame) {
+      if (/^[a-zA-Z]$/.test(keyGuess)) {
+        playAgain.innerText = "Keys guessed";
+        if (guessedLetters.includes(keyGuess)) {
+          already(keyGuess)
         } else {
-          playAgain.innerText = "Please Enter a letter"
+          wrong.style.display = "block";
+          if (keyGuess == randomLetter) {
+            win(keyGuess);
+          } else {
+            wrongLetter(keyGuess)
+          }
+          uniq.style.display = "none"
+          guessedLetters.push(keyGuess)
         }
-        button.addEventListener('click', () => {
-          window.location.reload()
-        })
+      } else {
+        playAgain.innerText = "Please Enter a letter"
       }
-    })
-
-    const already = (keyGuess) => {
-      uniq.style.display = "block";
-      wrong.style.display = "none";
-      uniq.innerText = `${keyGuess} has already been guessed `;
+      button.addEventListener('click', () => {
+        window.location.reload()
+      })
     }
+  })
 
-    const wrongLetter = (keyGuess) => {
-      wrong.innerText = "Nope, wrong letter";
-      wrong.classList.add("red");
-      guessed.innerText += ` ${keyGuess},`;
-    }
-    const win = (keyGuess) => {
-      uniq.style.display = "none";
-      right.style.display = "block";
-      wrong.style.display = "none";
-      letterGuess.innerText = keyGuess;
-      winner.innerText = "Would you like to play again?";
-      button.style.display = "block";
-      guessed.style.display = "none";
-      playAgain.style.display = "none";
-      isGame = false;
-    }
+  const already = (keyGuess) => {
+    uniq.style.display = "block";
+    wrong.style.display = "none";
+    uniq.innerText = `${keyGuess} has already been guessed `;
+  }
 
-  </script>
+  const wrongLetter = (keyGuess) => {
+    wrong.innerText = "Nope, wrong letter";
+    wrong.classList.add("red");
+    guessed.innerText += ` ${keyGuess},`;
+  }
+  const win = (keyGuess) => {
+    uniq.style.display = "none";
+    right.style.display = "block";
+    wrong.style.display = "none";
+    letterGuess.innerText = keyGuess;
+    winner.innerText = "Would you like to play again?";
+    button.style.display = "block";
+    guessed.style.display = "none";
+    playAgain.style.display = "none";
+    isGame = false;
+  }
+
+</script>
 </body>
 
 </html>
