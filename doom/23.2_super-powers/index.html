@@ -13,14 +13,12 @@
 
   <script>
     const storm = {
-      superPower: "fly"
-    }
-    const myfunc = () =>{
-      function printSuperPower() {
+      superPower: "fly",
+      some:function printSuperPower() {
         console.log("my superpower is " + this.superPower);
-      }printSuperPower()
+      }
     }
-    myfunc()
+    storm.some()
   </script>
 </body>
 
