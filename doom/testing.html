@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // exmp 1 call
+    let add = function (c) {
+      // console.log(this.a + this.b +c);
+    }
+    let obj = {
+      a: 1,
+      b: 2
+    }
+    add.call(obj, 3)
+
+    // exmp 2 call
+    let argsToArray = function () {
+      // console.log([].slice.call(arguments));
+    }
+    argsToArray(1, 2, 3)
+
+    // exmp 3 applay
+    let numArr = [1,2,3];
+    // console.log(Math.min.apply(null,numArr));
+
+    // exmp 4 bind ????
+    let button = function(content){
+      this.content = content
+    }
+
+    button.prototype.click = function(){
+      console.log(`${this.content} clicked`);
+    }
+
+    let newButton = new button("add")
+
+    let looseClick = newButton.click;
+    looseClick()
+  </script>
+</body>
+
+</html>
