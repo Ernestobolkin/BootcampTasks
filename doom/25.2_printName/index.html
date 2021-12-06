@@ -16,7 +16,7 @@
         console.log(this.name1);
       },
       printAfter: function () {
-        setTimeout(this.print, 2000);
+        setTimeout(this.print.bind(room2), 2000);
       },
     };
 

@@ -4,7 +4,7 @@ const room2 = {
     console.log(this.name1);
   },
   printAfter: function () {
-    setTimeout(this.print(),1000);
+    setTimeout(this.print.bind(room2),1000);
   },
 };
 
