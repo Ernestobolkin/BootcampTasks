@@ -1,17 +1,19 @@
 const isGreaterThen = (number) => {
   return new Promise((resolve, reject) => {
-    if (number > 10) {
-      resolve();
+    if (number >= 10) {
+      resolve(number);
     } else {
       reject(number);
     }
   });
 };
-isGreaterThen(5)
-  .then(() => {
-    console.log("it is grather then");
+let randomNum = Math.floor(Math.random()*20)
+isGreaterThen(randomNum)
+  .then((num) => {
+    console.log("it is grather then 10");
+    console.log(`${num} > 10`);
   })
   .catch((num) => {
-    console.log(num);
-    console.log("it is smaller then");
+    console.log("it is smaller then 10");
+    console.log(`${num} < 10`);
   });
