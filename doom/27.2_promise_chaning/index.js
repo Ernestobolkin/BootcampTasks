@@ -35,4 +35,3 @@ makeAllCaps(room2)
   console.log("SOMTHING WENT WRONG");
   console.log(word);
 })
-// sortWords().then
