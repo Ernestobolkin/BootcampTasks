@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background: #EEEEEE;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .userContiner {
+      background: #FFD369;
+      box-shadow: 2px 2px 2px 1px rgba(12, 0, 0, 0.315);
+      width: min-content;
+      text-align: center;
+      margin: 2rem 2rem 0 0;
+    }
+    .userContiner:hover{
+      transform: scale(1.09);
+    }
+
+    .img {
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      margin-top: 20px;
+      background-image: url();
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .cards {
+      display: flex;
+    }
+    .error{
+      font-size: 4rem;
+      text-align: center;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <input id="userName" type="text" placeholder="GitHub UserName">
+    <button class="generate">search</button>
+  </div>
+  <div class="cards">
+  </div>
+  <p class="error"></p>
+  <script src="./index.js"></script>
+</body>
+
+</html>
