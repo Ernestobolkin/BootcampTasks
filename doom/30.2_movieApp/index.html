@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+  body {
+    width: 100vw;
+    height: 100vh;
+    background: #EEEEEE;
+  }
+
+  .serchContainer {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 3rem 0;
+  }
+
+  .filmContainer {
+    width: 15rem;
+    height: min-content;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #ffdda3;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.20);
+  }
+  .filmContainer:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+  .img {
+    width: 100%;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .movieTitle {
+    color: #07031a;
+    font-size: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .error{
+      font-size: 3rem;
+      text-align: center;
+      color: red;
+    }
+    .genre{
+      color: #0d0046;
+    }
+</style>
+
+<body>
+  <div class="serchContainer">
+    <input type="text" class="movieName" placeholder="Enret Movie Name">
+    <button class="submit">Search</button>
+  </div>
+
+  <!-- <div class="filmContainer">
+    <div class="img"></div>
+    <h1 class="movieTitle">aao sgosj aa</h1>
+    <div class="genre">aaa</div>
+    <div class="year">aa</div>
+    <div class="plot">aa</div>
+  </div> -->
+  <p class="error"></p>
+  <script src="./index.js"></script>
+</body>
+
+</html>
