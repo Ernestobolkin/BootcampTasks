@@ -1,6 +1,6 @@
 const btn = document.querySelector(".generate");
-const p = document.querySelector(".joke");
-const h = document.querySelector("h2");
+const pElement = document.querySelector(".joke");
+const hElement = document.querySelector("h2");
 let theJoke = "";
 
 btn.addEventListener("click", () => {
@@ -10,8 +10,8 @@ btn.addEventListener("click", () => {
     })
     .then((val) => {
       theTitle = val.contents.jokes[0].joke.title;
-      h.textContent = theTitle
+      hElement.textContent = theTitle
       theJoke = val.contents.jokes[0].joke.text;
-      p.textContent = theJoke;
+      pElement.textContent = theJoke;
     });
 });

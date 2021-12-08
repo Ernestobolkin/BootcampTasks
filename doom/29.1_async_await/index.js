@@ -25,7 +25,7 @@ const getRecipe = (recipeID) => {
   });
 };
 
-const test = async () => {
+const myFunc = async () => {
   try {
     const ids = await getIDs();
     const rec = await getRecipe(ids[2]);
@@ -34,8 +34,8 @@ const test = async () => {
     console.log(error);
   }
 };
-test();
-
+myFunc();
+console.log("hello");
 // getIDs()
 //   .then((IDs) => {
 //     console.log(IDs);
