@@ -7,10 +7,8 @@ const checkArr = [];
 
 button.addEventListener("click", () => {
   const gitHubName = input.value;
-
   if (!checkArr.includes(input.value)) {
-    checkArr.push(gitHubName)
-    console.log(checkArr);
+    checkArr.push(gitHubName);
     error.textContent = "";
     async function Myfunc() {
       const url = `https://api.github.com/users/${gitHubName}`;
@@ -19,7 +17,6 @@ button.addEventListener("click", () => {
         const data = await response.json();
         if (response.ok) {
           outPutInfo(data);
-          // console.log(data);
           error.textContent = "";
         } else {
           error.textContent = "somthig went wrong!!!";
@@ -29,7 +26,7 @@ button.addEventListener("click", () => {
       }
     }
     Myfunc();
-  }else{
+  } else {
     error.textContent = "you already selected this gitHub user";
   }
 });
