@@ -9,6 +9,7 @@ const starWarsApi = async () => {
     const firstData = await firstResponse.json();
     const charactersApis = firstData.characters;
     charactersInfo(charactersApis);
+    console.log(charactersApis);
   } catch (error) {
     console.log(error);
   }
@@ -21,13 +22,6 @@ const charactersInfo = async (arr) => {
       let characterData = await (await fetch(arr[i])).json();
       let { name, height, hair_color, homeworld } = characterData;
       let world = await (await fetch(homeworld)).json();
-      characters.push({
-        name,
-        height,
-        hair_color,
-        worldName: world.name,
-        worldPopulation: world.population,
-      });
       tbody.innerHTML += 
       `<tr>
       <td>${name}</td>
@@ -43,4 +37,3 @@ const charactersInfo = async (arr) => {
   }
 };
 
-const myFunc = (obj) => {};

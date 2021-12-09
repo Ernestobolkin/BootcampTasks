@@ -24,6 +24,7 @@ submitBtn.addEventListener("click", () => {
   myFunc();
 });
 const datafunc = async (data) => {
+  error.textContent = "";
   console.log(data);
   const img = data.Poster;
   const movieTitle = data.Title;
